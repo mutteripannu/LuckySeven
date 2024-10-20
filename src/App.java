@@ -49,11 +49,15 @@ public class App {
             System.out.println("You lost...");
             System.out.println("You have " + cash + " euros.");   
         }
-
-        System.out.println("Play Again? (Y/N)");
-        playAgain = in.next();
+        if(cash > 0){
+           System.out.println("Play Again? (Y/N)");
+        playAgain = in.next(); 
+        }
         
     } while (playAgain.equalsIgnoreCase("y"));
-    //still missing check if player has any money left
+    System.out.println("Thank you for playing Lucky Seven!");
+
+    in.close();
     }
+    
 }
