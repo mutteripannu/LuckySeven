@@ -1,15 +1,24 @@
 import java.util.Random;
+import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
-        int cash = 5;
+        Scanner in = new Scanner(System.in);
+        int cash = 0;
         Random random = new Random();
         int randomNumber01 = random.nextInt(10)+1;
         int randomNumber02 = random.nextInt(10)+1;
         int randomNumber03 = random.nextInt(10)+1;
-        System.out.println("You have " + cash + " euros. One round costs 1 euros.");
+        //System.out.println("You have " + cash + " euros. One round costs 1 euros.");
+        System.out.println("***********************");
+        System.out.println("Welcome to LUCKY SEVEN!");
+        System.out.println("************************");
+        System.out.println("One round costs 1 euro.");
         System.out.println("One number seven: You win 3 euros");
         System.out.println("Two number sevens: You win 5 euros.");
-        System.err.println("Three number sevens: You win 10 euros!!!");
+        System.err.println("Three number sevens: You win 10 euros!");
+        System.out.println("Insert sum you wish to play with.");
+        cash = in.nextInt();
+        System.out.println("Okay, you are starting with " + cash + " euros. Let's play!");
         System.out.println("Number one: " + randomNumber01);
         System.out.println("Number two: " + randomNumber02);
         System.out.println("Number three: " + randomNumber03);
