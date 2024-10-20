@@ -4,11 +4,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner in = new Scanner(System.in);
         int cash = 0;
+        String playAgain = "";
         Random random = new Random();
-        int randomNumber01 = random.nextInt(10)+1;
-        int randomNumber02 = random.nextInt(10)+1;
-        int randomNumber03 = random.nextInt(10)+1;
-        //System.out.println("You have " + cash + " euros. One round costs 1 euros.");
         System.out.println("***********************");
         System.out.println("Welcome to LUCKY SEVEN!");
         System.out.println("************************");
@@ -19,6 +16,12 @@ public class App {
         System.out.println("Insert sum you wish to play with.");
         cash = in.nextInt();
         System.out.println("Okay, you are starting with " + cash + " euros. Let's play!");
+  do{    
+        int randomNumber01 = random.nextInt(10)+1;
+        int randomNumber02 = random.nextInt(10)+1;
+        int randomNumber03 = random.nextInt(10)+1;  
+
+        cash = cash -1;
         System.out.println("Number one: " + randomNumber01);
         System.out.println("Number two: " + randomNumber02);
         System.out.println("Number three: " + randomNumber03);
@@ -44,8 +47,13 @@ public class App {
         }
         else{
             System.out.println("You lost...");
-            System.out.println("You have " + cash + " euros.");
+            System.out.println("You have " + cash + " euros.");   
         }
 
+        System.out.println("Play Again? (Y/N)");
+        playAgain = in.next();
+        
+    } while (playAgain.equalsIgnoreCase("y"));
+    //still missing check if player has any money left
     }
 }
